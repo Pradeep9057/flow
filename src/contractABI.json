@@ -1,0 +1,24 @@
+[
+	{},
+	{
+		"name": "MeetingScheduled"
+	},
+	{
+		"name": "admin"
+	},
+	{
+		"name": "approveMeeting"
+	},
+	{
+		"name": "createMeeting"
+	},
+	{
+		"name": "getAllMeetings"
+	},
+	{
+		"name": "meetingCounter"
+	},
+	{
+		"name": "meetings"
+	}
+]

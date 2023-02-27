@@ -1,0 +1,129 @@
+.Navbar1{
+    font-style: bold;
+    background-color: #469c99;
+}
+.nav_head{
+    border:2px solid black;
+    
+}
+.item{
+    text-decoration: none;
+    /* border:1px solid red; */
+    margin:0px;
+    margin-left: 10px;
+    color: white;
+    font-size: 1.5rem;
+
+
+}
+.item:hover{
+    background-color: green;
+    color:white;
+    opacity:0.6;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out; 
+}
+
+.heading1{
+    font-size: 3rem;
+    letter-spacing: 5px;
+    margin: 0px 1.5rem;
+    font-family:monospace;
+    /* color:green; */
+    padding:1rem;
+    color :white;
+    font-weight: 500;
+    font-style: bold;
+    margin:0px;
+    padding: 0px;
+
+
+
+}
+.heading1:hover{
+    background-color: green;
+    border-radius: 12px;
+}
+.nav_head{
+    background-color: green;
+    width: 80%;
+    /* border: 1px solid red; */
+    border:none;
+
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    background-color: green;
+    /* border: 1px solid red; */
+
+
+}
+.section2{
+    width:20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (min-width: 991px) {
+  .small{
+    /* background-color: olive; */
+    display: none;
+    color:white;
+  }
+  
+}
+
+@media screen and (max-width: 991px) {
+ .large{
+    display: none;
+ }
+ .section2{
+    display: none;
+ }
+}
+ 
+
+.smallItem{
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    font-style: bold;
+    letter-spacing: 2px;
+}
+.signInside{
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color:#0275d8;
+    margin:1rem 0px;
+
+}
+.signInside:hover{
+  color:green;
+  background-color: white;
+}
+.sign{
+    display: flex;
+    /* justify-content: right; */
+
+}
+.button{
+    padding: 0.7rem;
+    letter-spacing: 1px;
+}
+.button:hover{
+    background-color: white;
+    color:green;
+    border:none
+
+}
+
+
+
