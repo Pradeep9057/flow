@@ -114,14 +114,20 @@
     /* justify-content: right; */
 
 }
-.button{
-    padding: 0.7rem;
+.button1{
     letter-spacing: 1px;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: bold;
 }
-.button:hover{
+.button1:hover{
     background-color: white;
     color:green;
-    border:none
+    border:none;
+
 
 }
 

@@ -1,0 +1,33 @@
+.walletCard{
+    display: flex;
+    flex-direction: column;
+}
+.items{
+    margin: 1rem 0px;
+}
+
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border: 1px solid red;
+    flex-direction: column;
+
+    
+}
+.mainInside{
+        /* border: 1px solid red; */
+        padding:14rem 6rem;
+        display: flex;
+        flex-direction: column;
+        background-color: #0275d8;
+        border-radius: 20px;
+        
+
+}
+.wallet{
+    padding: 2rem;
+    border-radius: 10px;
+}

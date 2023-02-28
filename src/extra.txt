@@ -1,0 +1,76 @@
+import React, { useState, useEffect } from 'react';
+import Web3 from 'web3';
+import AuthContract from './AuthContract.sol';
+
+function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userAddress, setUserAddress] = useState('');
+  const [contract, setContract] = useState(null);
+
+  useEffect(() => {
+    const init = async () => {
+      // Check if MetaMask is installed and get user's address
+      if (window.ethereum) {
+        try {
+          await window.ethereum.enable();
+          const web3 = new Web3(window.ethereum);
+          const accounts = await web3.eth.getAccounts();
+          setUserAddress(accounts[0]);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+    init();
+  }, []);
+
+  const connect = async () => {
+    // Check if MetaMask is installed and get user's address
+    if (window.ethereum) {
+      try {
+        await window.ethereum.enable();
+        const web3 = new Web3(window.ethereum);
+        const accounts = await web3.eth.getAccounts();
+        setUserAddress(accounts[0]);
+
+        // Get contract instance and authenticate user
+        const networkId = await web3.eth.net.getId();
+        const deployedNetwork = AuthContract.networks[networkId];
+        const instance = new web3.eth.Contract(AuthContract.abi, deployedNetwork && deployedNetwork.address);
+        await instance.methods.authenticate().send({ from: userAddress });
+        setContract(instance);
+        setLoggedIn(true);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
+  const disconnect = async () => {
+    // Unauthenticate user and disconnect from MetaMask
+    try {
+      await contract.methods.unauthenticate().send({ from: userAddress });
+      setLoggedIn(false);
+      setContract(null);
+      await window.ethereum.disable();
+      setUserAddress('');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <div className="App">
+      {loggedIn ? (
+        <div>
+          <p>Logged in as {userAddress}</p>
+          <button onClick={()=>disconnect}>Disconnect</button>
+        </div>
+      ) : (
+        <button onClick={()=>connect}>Connect with MetaMask</button>
+      )}
+    </div>
+  );
+}
+
+export default App;

@@ -57,7 +57,7 @@
     font-size: 2rem;
     font-style: bold;
     margin: 4rem 0px;
-    color:white;
+    color:black
 }
 .head{
     border: 1px solid green;
@@ -91,7 +91,7 @@
 }
 
 .hero-image {
-  background-image: url("./picture/fontPage2.jpg");
+  background-image: url("./picture/img2.jpg");
   filter: brightness(100%);
   /* background-color: #5a5656; */
   height: 88vh;
@@ -101,7 +101,6 @@
   position: relative;
   opacity: 1;
 }
-
 .hero-text {
   text-align: center;
   position: absolute;

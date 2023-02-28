@@ -1,20 +1,19 @@
 import "./Front.css";
-import Calender from "./Calender/Calender.js";
 import { useState } from "react";
 import Navbar from "./Navbar/Navbar1";
 import { useNavigate, NavLink } from "react-router-dom";
 import React from "react";
-
-
-const Front = () => {
+const Front = (prop) => {
     const [user, setUser] = useState("hidden");
     const [date, setDate] = useState();
+    const [navData, setNavData] = useState();
     const showDate = () => { setUser("visible"); }
+    // setNavData(prop.data);
 
     return (
         <div>
             <div>
-                <Navbar />
+                <Navbar data={prop.data} />
             </div>
             <div className="meeting hero-image">
                 <div className="hero-text">
@@ -23,6 +22,8 @@ const Front = () => {
                     <NavLink className="newMeet" to="/calender" >New Meeting</NavLink>
                 </div>
             </div>
+            {prop.data}
+            {/* {navData} */}
         </div>
 
     )
